@@ -1,0 +1,13 @@
+https://openclassrooms.com/en/courses/7192261-simulez-le-schema-de-votre-reseau-avec-cisco-packet-tracer/7444251-configurez-le-routage-de-votre-routeur
+
+en
+conf t
+hostname <hostname>
+interface g1/0/1
+no switchport				#necessary to be able to configure an ip address
+ip address <ip address> <subnet_mask>
+exit
+ip routing				#activates ipv4 rounting
+ip route 0.0.0.0 0.0.0.0 <next_hop_ip>	#sets up a default route
+exit
+copy run start

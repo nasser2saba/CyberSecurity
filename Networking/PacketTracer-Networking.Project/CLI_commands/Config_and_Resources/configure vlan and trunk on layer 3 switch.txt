@@ -1,0 +1,82 @@
+
+
+SwitchL3(config)# vlan 20
+SwitchL3(config-vlan)# name Direction
+SwitchL3(config-vlan)# exit
+SwitchL3(config)# vlan 21
+SwitchL3(config-vlan)# name Examen/Concours
+SwitchL3(config-vlan)# exit
+SwitchL3(config)# vlan 22
+SwitchL3(config-vlan)# name Paie/DRH
+SwitchL3(config-vlan)# exit
+SwitchL3(config)# vlan 23
+SwitchL3(config-vlan)# name Emploi
+SwitchL3(config-vlan)# exit
+SwitchL3(config)# vlan 24
+SwitchL3(config-vlan)# name Medecine
+SwitchL3(config-vlan)# exit
+SwitchL3(config)# vlan 25
+SwitchL3(config-vlan)# name Assurance
+SwitchL3(config-vlan)# exit
+SwitchL3(config)# vlan 27
+SwitchL3(config-vlan)# name Info/RGPD
+SwitchL3(config-vlan)# exit
+SwitchL3(config)# vlan 30
+SwitchL3(config-vlan)# name Serveurs
+SwitchL3(config-vlan)# exit
+SwitchL3(config)# vlan 40
+SwitchL3(config-vlan)# name Impression
+SwitchL3(config-vlan)# exit
+SwitchL3(config)# vlan 50
+SwitchL3(config-vlan)# name Telephonie
+SwitchL3(config-vlan)# exit
+SwitchL3(config)# vlan 60
+SwitchL3(config-vlan)# name Wifi
+SwitchL3(config-vlan)# exit
+SwitchL3(config)# vlan 100
+SwitchL3(config-vlan)# name Administration
+SwitchL3(config-vlan)# exit
+SwitchL3(config)# interface g1/0/2
+SwitchL3(config-if)# switchport trunk encapsulation dot1q	#important for layer 3 switches
+SwitchL3(config-if)# switchport mode trunk
+SwitchL3(config-if)# switchport trunk native vlan 100
+SwitchL3(config-if)# switchport trunk allowed vlan 
+20,21,40,50,100
+SwitchL3(config-if)# exit
+SwitchL3(config)# interface g1/0/3
+SwitchL3(config-if)# switchport trunk encapsulation dot1q
+SwitchL3(config-if)# switchport mode trunk
+SwitchL3(config-if)# switchport trunk native vlan 100
+SwitchL3(config-if)# switchport trunk allowed vlan 
+22,23,40,50,100
+SwitchL3(config-if)# exit
+SwitchL3(config)# interface g1/0/4
+SwitchL3(config-if)# switchport trunk encapsulation dot1q
+SwitchL3(config-if)# switchport mode trunk
+SwitchL3(config-if)# switchport trunk native vlan 100
+SwitchL3(config-if)# switchport trunk allowed vlan 
+24,25,40,50,100
+SwitchL3(config-if)# exit
+SwitchL3(config)# int g1/0/5
+SwitchL3(config-if)# switchport trunk encapsulation dot1q
+SwitchL3(config-if)# switchport mode trunk
+SwitchL3(config-if)# switchport trunk native vlan 100
+SwitchL3(config-if)# switchport trunk allowed vlan 
+27,40,50,100
+SwitchL3(config-if)# exit
+SwitchL3(config)# int g1/0/6
+SwitchL3(config-if)# switchport mode access
+SwitchL3(config-if)# switchport access vlan 30
+SwitchL3(config-if)# exit
+SwitchL3(config)# int g1/0/7
+SwitchL3(config-if)# switchport mode access
+SwitchL3(config-if)# switchport access vlan 30
+SwitchL3(config-if)# exit
+SwitchL3(config)# int g1/0/8
+SwitchL3(config-if)# switchport mode access
+SwitchL3(config-if)# switchport access vlan 30
+SwitchL3(config-if)# exit
+SwitchL3(config)# int g1/0/9
+SwitchL3(config-if)# switchport mode access
+SwitchL3(config-if)# switchport access vlan 60
+SwitchL3(config-if)# exit

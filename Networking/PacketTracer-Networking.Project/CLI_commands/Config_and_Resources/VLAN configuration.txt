@@ -1,0 +1,21 @@
+https://openclassrooms.com/en/courses/7192261-simulez-le-schema-de-votre-reseau-avec-cisco-packet-tracer/7444283-parametrez-les-vlan
+
+3
+
+en
+conf t
+vlan 20				#connects/create vlan 20. Could be any number from 2 to 1000
+name Direction			#Associates a name with the vlan number
+exit				#not actually necessary. you could immediatly input the next vlan
+vlan 21
+name Examen/concours
+vlan 40
+name Impression
+vlan 50
+name Telephonie
+vlan 100
+name Administration
+exit
+exit
+show vlan brief			#in order to check
+copy run start

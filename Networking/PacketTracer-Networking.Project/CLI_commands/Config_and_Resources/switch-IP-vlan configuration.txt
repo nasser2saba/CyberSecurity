@@ -1,0 +1,12 @@
+https://openclassrooms.com/en/courses/7192261-simulez-le-schema-de-votre-reseau-avec-cisco-packet-tracer/7444227-configurez-les-parametres-de-base-d-un-commutateur-de-couche-2
+
+1
+
+en
+conf t
+hostname <hostname>
+interface vlan 100
+ip address 192.168.100.2 255.255.255.0
+no shutdown
+exit
+ip default-gateway 192.168.100.254

@@ -1,0 +1,28 @@
+https://openclassrooms.com/en/courses/7192261-simulez-le-schema-de-votre-reseau-avec-cisco-packet-tracer/7444283-parametrez-les-vlan
+
+en
+conf t
+int f0/1			#connects to interface fastethernet0/1
+switchport mode access		#defines the acces mode of the vlan
+switchport access vlan 20	#links the vlan to the interface
+exit				#not necessary
+int f0/2
+switchport mode access
+switchport acces vlan 20
+exit
+int f0/3
+switchport mode access
+switchport acces vlan 40
+exit
+int f0/4
+switchport mode access
+switchport acces vlan 21
+exit
+int f0/5
+switchport mode access
+switchport acces vlan 21
+exit
+int f0/6
+switchport mode access
+switchport acces vlan 40
+exit

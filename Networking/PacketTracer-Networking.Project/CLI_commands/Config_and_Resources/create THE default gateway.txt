@@ -1,0 +1,73 @@
+SwitchL3(config)# interface vlan 20
+SwitchL3(config-if)# description Passerelle SVI Direction
+SwitchL3(config-if)# ip address 192.168.20.254 255.255.255.0
+SwitchL3(config-if)# ipv6 address 2001:db8:acad:20::254/64		#Don't do those
+SwitchL3(config-if)# no shutdown
+SwitchL3(config-if)# exit
+SwitchL3(config)# interface vlan 21
+SwitchL3(config-if)# description Passerelle SVI 
+Examen/Concours
+SwitchL3(config-if)# ip address 192.168.21.254 255.255.255.0
+SwitchL3(config-if)# ipv6 address 2001:db8:acad:21::254/64
+SwitchL3(config-if)# no shutdown
+SwitchL3(config-if)# exit
+SwitchL3(config)# interface vlan 22
+SwitchL3(config-if)# description Passerelle SVI Paie/DRH
+SwitchL3(config-if)# ip address 192.168.22.254 255.255.255.0
+SwitchL3(config-if)# ipv6 address 2001:db8:acad:22::254/64
+SwitchL3(config-if)# no shutdown
+SwitchL3(config-if)# exit
+SwitchL3(config)# interface vlan 23
+SwitchL3(config-if)# description Passerelle SVI Emploi
+SwitchL3(config-if)# ip address 192.168.23.254 255.255.255.0
+SwitchL3(config-if)# ipv6 address 2001:db8:acad:23::254/64
+SwitchL3(config-if)# no shutdown
+SwitchL3(config-if)# exit
+SwitchL3(config)# interface vlan 24
+SwitchL3(config-if)# description Passerelle SVI Medecine
+SwitchL3(config-if)# ip address 192.168.24.254 255.255.255.0
+SwitchL3(config-if)# ipv6 address 2001:db8:acad:24::254/64
+SwitchL3(config-if)# no shutdown
+SwitchL3(config-if)# exit
+SwitchL3(config)# interface vlan 25
+SwitchL3(config-if)# description Passerelle SVI Assurance
+SwitchL3(config-if)# ip address 192.168.25.254 255.255.255.0
+SwitchL3(config-if)# ipv6 address 2001:db8:acad:25::254/64
+SwitchL3(config-if)# no shutdown
+SwitchL3(config-if)# exit
+SwitchL3(config)# interface vlan 27
+SwitchL3(config-if)# description Passerelle SVI Info/RGPD
+SwitchL3(config-if)# ip address 192.168.27.254 255.255.255.0
+SwitchL3(config-if)# ipv6 address 2001:db8:acad:27::254/64
+SwitchL3(config-if)# no shutdown
+SwitchL3(config-if)# exit
+SwitchL3(config)# interface vlan 30
+SwitchL3(config-if)# description Passerelle SVI Serveurs
+SwitchL3(config-if)# ip address 192.168.30.254 255.255.255.0
+SwitchL3(config-if)# ipv6 address 2001:db8:acad:30::254/64
+SwitchL3(config-if)# no shutdown
+SwitchL3(config-if)# exit
+SwitchL3(config)# interface vlan 40
+SwitchL3(config-if)# description Passerelle SVI Impression
+SwitchL3(config-if)# ip address 192.168.40.254 255.255.255.0
+SwitchL3(config-if)# ipv6 address 2001:db8:acad:40::254/64
+SwitchL3(config-if)# no shutdown
+SwitchL3(config-if)# exit
+SwitchL3(config)# interface vlan 50
+SwitchL3(config-if)# description Passerelle SVI Telephonie
+SwitchL3(config-if)# ip address 192.168.50.254 255.255.255.0
+SwitchL3(config-if)# ipv6 address 2001:db8:acad:50::254/64
+SwitchL3(config-if)# no shutdown
+SwitchL3(config-if)# exit
+SwitchL3(config)# interface vlan 60
+SwitchL3(config-if)# description Passerelle SVI Wifi
+SwitchL3(config-if)# ip address 192.168.60.254 255.255.255.0
+SwitchL3(config-if)# ipv6 address 2001:db8:acad:60::254/64
+SwitchL3(config-if)# no shutdown
+SwitchL3(config-if)# exit
+SwitchL3(config)# int vlan 100
+SwitchL3(config-if)# description Passerelle SVI Administration
+SwitchL3(config-if)# ip address 192.168.100.254 255.255.255.0
+SwitchL3(config-if)# ipv6 address 2001:db8:acad:100::254/64
+SwitchL3(config-if)# no shutdown
+SwitchL3(config-if)# exit

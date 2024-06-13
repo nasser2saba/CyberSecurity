@@ -1,0 +1,18 @@
+https://openclassrooms.com/en/courses/7192261-simulez-le-schema-de-votre-reseau-avec-cisco-packet-tracer/7444248-configurez-les-interfaces-de-votre-routeur
+
+I put () in words to show how some commands can be shortened, <> for fields to be filled in by yourself
+
+enable
+conf(igure) t(erminal)
+int g0/0					#allows you to configure the GigabitEthernet interface 0/0
+ip address <ip_address_to_be_set> <subnet mask>
+description <add_description_of_device>		#description displayed in the router's configuration file
+no shut(down)					#Standard good practice. Opens the ports if they are not.
+exit
+int s0/1/1					#interface Serial 0/1/1. Serial interfaces are used for router to router communication. might need to add a physical port for this.
+ip address <ip_address_to_be_set> <subnet_mask>
+no shutdown
+description <add_description_of_device>
+exit
+exit
+copy run start					#will preserve the configuration through reboots

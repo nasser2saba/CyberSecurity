@@ -1,0 +1,23 @@
+https://openclassrooms.com/en/courses/7192261-simulez-le-schema-de-votre-reseau-avec-cisco-packet-tracer/7444244-realisez-les-premieres-configurations-des-routeurs-de-votre-reseau
+
+enable
+conf t(erminal)
+hostname <hostname_router>
+enable secret <password>		#Creates a password for the privileged user mode
+ip ssh version 2			#Specifies ssh version 2 should be used instead of 1, can be checked with show ip ssh. ssh2 is more secure
+ip domain-name <domain_name.com>	#creates a domain name which will be used for internal router functions
+username admin secret <password>	#creates a username with an associated encrypted password for authentication purposes, can be checked with 'show users' or 'show-running config' depending on device and IOS version
+crypto key generate rsa 		#generates an rsa key for ssh purposes and others
+1024					#size of the key. Range from 360 to 2048.
+line console 0				#allows you to configure the console port
+password <password>			#sets a password to access the port
+login					#produces a prompt when the user is trying to access this port
+exit
+line vty 0 15
+transport input ssh			#The device will only accept SSH connections on those vty lines				
+login local				#anyone trying to access the device remotely via ssh on virtual terminal from 0 to 15 will be prompted to login
+exit
+service password-encryption		#provides a weak encryption protecting the password
+banner motd #<message>#			#Users will see this message displayed before they are prompted for authentification
+exit
+copy run start				#saves the currently running configuration to the startup configuration.

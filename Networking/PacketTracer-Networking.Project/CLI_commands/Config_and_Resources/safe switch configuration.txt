@@ -1,0 +1,19 @@
+https://openclassrooms.com/en/courses/7192261-simulez-le-schema-de-votre-reseau-avec-cisco-packet-tracer/7444232-configurez-l-acces-a-distance-securise-de-votre-commutateur
+
+2
+
+en
+show ip ssh			#check if the device supports ssh
+conf t
+enable secret <password>
+ip domain-name <domain_name.com>
+ip ssh version 2
+crypto key generate rsa
+1024
+username admin secret <password>
+line vty 0 15
+login local
+transport input ssh
+exit
+exit
+copy run start

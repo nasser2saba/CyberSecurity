@@ -1,0 +1,9 @@
+en
+conf t
+int <port>
+switchport mode trunk
+switchport trunk native vlan 100			#Sets the native vlan at vlan 100. Vlan 1 by default, to be changed for safety purses
+switchport trunk allowed vlan 20,21,40,50,100
+exit
+exit
+show interface <port> switchport			#To check if set up correctly

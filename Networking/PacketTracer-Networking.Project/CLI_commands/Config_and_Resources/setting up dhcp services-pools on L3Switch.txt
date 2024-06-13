@@ -1,0 +1,13 @@
+en
+configure terminal
+ip dhcp pool <VLANX>						#Replace X by the number of the VLAN whose ip you'd like to set up
+network <network_ip> <network_mask>				#don't forget the network address is the one that ends with 0, not 1
+default-router <default_gateway>
+dns-server <ip_dnsserver>					#if your network has access to a DNS server
+exit
+ip dhcp excluded-address <starting_addres> <end_address>	#if you'd like to reserve some ip addresses to use them as static addresses for example. the starting and end ip addresses will be excluded too of course
+
+do the same to the next vlans...
+
+exit
+copy run start							#for good measure
