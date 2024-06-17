@@ -1,0 +1,69 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact Form</title>
+</head>
+<body>
+    <h2>Contact Form</h2>
+    <form method="post">
+        <div>
+            <label for="first_name">First Name:</label>
+            <input type="text" id="first_name" name="first_name" value="{{ form_data.get('first_name', '') }}" required>
+        </div>
+        <div>
+            <label for="last_name">Last Name:</label>
+            <input type="text" id="last_name" name="last_name" value="{{ form_data.get('last_name', '') }}" required>
+        </div>
+        <div>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" value="{{ form_data.get('email', '') }}" required>
+        </div>
+        <div>
+            <label for="country">Country:</label>
+            <select id="country" name="country" required>
+                <option value="" selected disabled>Select Country</option>
+                {% for country in countries %}
+                <option value="{{ country }}" {% if form_data.get('country') == country %}selected{% endif %}>{{ country }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div>
+            <label>Gender:</label><br>
+            <input type="radio" id="male" name="gender" value="M" {% if form_data.get('gender') == 'M' %}checked{% endif %}>
+            <label for="male">Male</label><br>
+            <input type="radio" id="female" name="gender" value="F" {% if form_data.get('gender') == 'F' %}checked{% endif %}>
+            <label for="female">Female</label><br>
+        </div>
+        <div>
+            <label>Subjects:</label><br>
+            {% for subject in subjects %}
+            <input type="checkbox" id="{{ subject }}" name="subject" value="{{ subject }}" {% if subject in form_data.get('selected_subjects', []) %}checked{% endif %}>
+            <label for="{{ subject }}">{{ subject }}</label><br>
+            {% endfor %}
+        </div>
+        <div>
+            <label for="message">Message:</label><br>
+            <textarea id="message" name="message" rows="4" cols="50" required>{{ form_data.get('message', '') }}</textarea>
+        </div>
+        <div style="display:none">
+            <label for="honeypot">Leave this field blank:</label>
+            <input type="text" id="honeypot" name="honeypot">
+        </div>
+        <div>
+            <button type="submit">Submit</button>
+        </div>
+    </form>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+    <ul>
+        {% for category, message in messages %}
+        <li>{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    {% endwith %}
+</body>
+</html>
