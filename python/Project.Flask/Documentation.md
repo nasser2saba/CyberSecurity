@@ -235,3 +235,31 @@ Visit `http://127.0.0.1:5000/` in your web browser to access the contact form. F
 - **Flash Messages**: Used for displaying error messages next to their respective form fields.
 
 This setup fulfills the requirements for a Flask-based contact form that performs server-side sanitization, validation, and provides feedback to the user. Adjustments can be made to expand
+
+
+### Errors/Bugs & Fixes
+
+Script wasn't able to access the templates, realised it was trying to access "template" folder while i had it saved as "Templates", welp
+
+Then encountered issues tryina push the changes to github but it worked out just pulled origin main and push it again. 
+
+Now tryna figure out why it still can't acces the freaking templates, bruh
+
+
+
+ChatGPT troubleshoot: 
+
+In your Flask application (app.py), verify that the render_template function is correctly referencing contact_form.html. Here's an example:
+
+```python
+from flask import Flask, render_template
+
+app = Flask(__name__)
+
+@app.route('/')
+def index():
+    return render_template('contact_form.html')
+
+if __name__ == '__main__':
+    app.run(debug=True)
+```
