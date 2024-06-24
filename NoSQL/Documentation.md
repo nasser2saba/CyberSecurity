@@ -383,8 +383,7 @@ python export_to_json.py
     db.students.find().pretty()
     ```
 
-This process will migrate your MySQL data to MongoDB. If you need to transform the data further to fit MongoDB's document model, you can do so using Python or another scripting language before importing. Let me know if you need further assistance!
-
+This process will migrate the MySQL data to MongoDB. If you need to transform the data further to fit MongoDB's document model, you can do so using Python or another scripting language before importing.
 
 ### Ecommerce store
 
@@ -557,4 +556,8 @@ use ecommerce
    });
    ```
 
-By following these steps, you can set up and manage an e-commerce database in MongoDB. Adjust the schema and data as per your application's requirements. If you have any specific questions or need further assistance, feel free to ask!
+
+
+
+
+Anddd we're doneeee.
