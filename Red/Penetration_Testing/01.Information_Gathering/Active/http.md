@@ -191,7 +191,7 @@ Please, follow this link :
 - https://techyrick.com/nikto-2/
 
 ## Exercises 
-⚠️⚠️⚠️ Please save your answers. Your coaches may ask you for a copy of all your answers at the end of the challenge. ⚠️⚠️⚠️
+Please save your answers. Your coaches may ask you for a copy of all your answers at the end of the challenge.
 
 IP : 10.12.1.4x
 
