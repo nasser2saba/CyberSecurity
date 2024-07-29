@@ -75,10 +75,13 @@ Please save your answers. Your coaches may ask you for a copy of all your answer
     > Your command `dig adlp-corp.com NS`
 
 6. Uses a brute force tool to find subdomains of adlp-corp.com. How many did you find?
-    > Your response 
-    > Your command  command is not working bruhhh
+    > Your response 16 
+    > Your command  ``python subnetter.py --address 52.51.133.160 --subnets 14 --range 4 ``
+
+    tried a variety of tools but didn't work, ended up with a python script that did it for me. 
+
 7. Use theHarvester tool at becode.org. How many Linkedin Users? 
-    I used the Harvester but it does,'t provide this service anymore.
+    I used the Harvester but it doesn't provide this service anymore.
 
 
 8. Use theHarvester tool at becode.org. How many ip addresses did you find? 
@@ -87,8 +90,71 @@ Please save your answers. Your coaches may ask you for a copy of all your answer
 9. Write a small script to attempt a zone transfer from adlp-corp.com using a higher-level
 scripting language such as Python, Perl, or Ruby
     > Your Script 
+you'll need dnspython for this-> install it 
+
+```python
+    import dns.query
+import dns.zone
+import dns.resolver
+
+def attempt_zone_transfer(domain):
+    try:
+        # Get the list of name servers for the domain
+        ns_records = dns.resolver.resolve(domain, 'NS')
+        for ns in ns_records:
+            ns = str(ns)
+            print(f'Trying zone transfer for {domain} from name server: {ns}')
+            try:
+                zone = dns.zone.from_xfr(dns.query.xfr(ns, domain))
+                if zone:
+                    print(f'Zone transfer successful from {ns}!\n')
+                    for name, node in zone.nodes.items():
+                        print(zone[name].to_text(name))
+                    return
+            except Exception as e:
+                print(f'Zone transfer failed from {ns}: {e}')
+    except Exception as e:
+        print(f'Could not resolve NS records for {domain}: {e}')
+
+if __name__ == '__main__':
+    domain = 'adlp-corp.com'  # Replace with your target domain
+    attempt_zone_transfer(domain)
+```
 10.  Write a small script to attempt a brute force search for subdomains using a higher level scripting language such as Python, Perl or Ruby.
     > Your Script 
+    you'll need dnspython for this -> install it 
+```python 
+    import dns.resolver
+
+def brute_force_subdomains(domain, wordlist):
+    subdomains = []
+    resolver = dns.resolver.Resolver()
+    resolver.timeout = 1
+    resolver.lifetime = 1
+
+    try:
+        with open(wordlist, 'r') as file:
+            for line in file:
+                subdomain = line.strip() + '.' + domain
+                try:
+                    answers = resolver.resolve(subdomain, 'A')
+                    for answer in answers:
+                        subdomains.append(subdomain)
+                        print(f'Found: {subdomain} -> {answer}')
+                except (dns.resolver.NXDOMAIN, dns.resolver.Timeout, dns.resolver.NoNameservers):
+                    pass
+    except FileNotFoundError:
+        print(f'Wordlist file not found: {wordlist}')
+
+    return subdomains
+
+if __name__ == '__main__':
+    domain = 'adlp-corp.com'  # Replace with your target domain
+    wordlist = 'subdomains.txt'  # Replace with the path to your wordlist
+
+    found_subdomains = brute_force_subdomains(domain, wordlist)
+    print(f'Total subdomains found: {len(found_subdomains)}')
+```
 ## Ressources 
 - https://en.wikipedia.org/wiki/List_of_DNS_record_types
 - https://www.exploit-db.com/docs/12389.pdf
