@@ -196,23 +196,23 @@ Please save your answers. Your coaches may ask you for a copy of all your answer
 IP : 10.12.1.4x
 
 1. How many files could you find on port 80?
-    > Your response 
+    > Your response 6
 1. What is the version of apache?
-    > Your response 
+    > Your response > Apache 2.2.8 (Ubuntu)
 1. What is the version of php ?
-    > Your response 
+    > Your response php 5.2.4
 1. What server extension is installed?
-    > Your response 
+    > Your response mod_dav
 1. What is the name of the file in testoutput?
     > Your response 
 1. Do a scan with Nikto on port 80.
-    > Your response  
+    > Your response /phpinfo.php
 An informative file in php seems to be available, what is its name?
 1. What application has a name that starts with T and ends with Y?
-    > Your response 
+    > Your response Twiki> /phpinfo.php?
 1. What curl command can you use to see the server version?
-    > Your response 
+    > Your response `curl -I 10.12.1.40`
 1. What tool for enumerating files does it do recursively? (By default)
-    > Your response 
+    > Your response dirb
 1. What other administration application is currently also on port 80?
-    > Your response 
+    > Your response phpMyAdmin
