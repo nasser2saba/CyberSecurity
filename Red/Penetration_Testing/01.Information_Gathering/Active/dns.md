@@ -46,10 +46,12 @@ Please save your answers. Your coaches may ask you for a copy of all your answer
 1. What is the ip address of adlp-corp.com ?
     > Your response 52.51.133.160
     > Your command `nslookup adlp-corp.com`
+    or `dig adlp-corp.com +short`
 
 2. What is the TXT record of adlp-corp.com? 
     > Your response  BC{DESCRIPTIVE-DOMAIN-TXT}
     > Your command ```dig adlp-corp.com TXT``
+    or `dig -t txt adlp-corp.com +short`
 
 3. What are the MX records of becode.org ?
     > Your response 1 aspmx.l.google.com.
@@ -58,6 +60,7 @@ Please save your answers. Your coaches may ask you for a copy of all your answer
                     10 alt4.aspmx.l.google.com.
                     5 alt2.aspmx.l.google.com.
     > Your command `dig becode.org MX`
+    or `dig -t mx becode.org +short`
 
 4. What are the MX records of adlp-corp.com ?
     > Your response 10 alt3.aspmx.l.google.com.
@@ -66,34 +69,38 @@ Please save your answers. Your coaches may ask you for a copy of all your answer
                 	1 aspmx.l.google.com.
                     5 alt2.aspmx.l.google.com.
     > Your command `dig adlp-corp.com`
+    or `dig -t mx adlp-corp.com +short`
 
 5. What is the first NS name server of adlp-corp.com?
     > Your response ns-269.awsdns-33.com.
-                    ns-1997.awsdns-57.co.uk.
-                    ns-1185.awsdns-20.org.
-                    ns-588.awsdns-09.net.
+            2nd:    ns-1997.awsdns-57.co.uk.
+            3rd:    ns-1185.awsdns-20.org.
+            4th:    ns-588.awsdns-09.net.
     > Your command `dig adlp-corp.com NS`
+    or `dig -t ns adlp-corp.com +short`
 
 6. Uses a brute force tool to find subdomains of adlp-corp.com. How many did you find?
     > Your response 16 
     > Your command  ``python subnetter.py --address 52.51.133.160 --subnets 14 --range 4 ``
-
     tried a variety of tools but didn't work, ended up with a python script that did it for me. 
+
+    -> use Burp
+
 
 7. Use theHarvester tool at becode.org. How many Linkedin Users? 
     I used the Harvester but it doesn't provide this service anymore.
-
+    -> doesn't work 
 
 8. Use theHarvester tool at becode.org. How many ip addresses did you find? 
-    > Your response 
-    > Your command 
+    > Your response 40
+    > Your command theharvester -d becode.org -b all
 9. Write a small script to attempt a zone transfer from adlp-corp.com using a higher-level
 scripting language such as Python, Perl, or Ruby
     > Your Script 
 you'll need dnspython for this-> install it 
 
 ```python
-    import dns.query
+import dns.query
 import dns.zone
 import dns.resolver
 
