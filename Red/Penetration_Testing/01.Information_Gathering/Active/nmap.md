@@ -61,7 +61,7 @@ Ip : 10.12.1.36
 1. What is the os version ? 
 1. What is the version of Samba ?
 1. Wat is the name of the box ?
-> Command: `nmap -p 445 --script smb-os-discovery 10.12.1.36`
+>Command: `nmap -p 445 --script smb-os-discovery 10.12.1.36`
 >Domain Name: localdomain
 >Fully Qualified Domain Name (FQDN): metasploitable.localdomain
 >Operating System Version: Unix (Samba 3.0.20-Debian)
@@ -72,8 +72,18 @@ Ip : 10.12.1.36
    Charleroi : 10.11.0.1/24
    Bruxelles : 10.12.0.1/24
    Ghent : 10.13.0.1/24
-    > Your response 
+
+
+    >command: `nmap -p- 10.11.0.1/24`                                                               ─╯
+         4 host up
+
+    >command: `nmap -p- 10.12.0.1/24`
+         6 host up 
+
+    >command: `nmap -p- 10.13.0.1/24`
+         4 host up 
 
 1. Do the same thing but with the top port option at 10. What command did you use?
-    > Your response 
+    > Your response `nmap --top-port 10 {ip/24}`
+    or `nmap --top-ports 10 10.12.1.0/24`
 
