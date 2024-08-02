@@ -100,28 +100,29 @@ Recon-ng has a look and feel similar to the Metasploit Framework, reducing the l
 ## Exercices
 
 1. What is the registrant postal code for facebook.com? 
-> Your response
+> Your response 94025 
 
 2. When was the becode.org domain first registered (Format: DD/MM/YYYY)?
-> Your response
+> Your response 04/10/2016 
 
 3. Which city is the registrant based for microsoft.com ?
-> your response
+> your response Redmond, Washington
 
 4. What is the name of the golf course that is near the registrant address for microsoft.com?
-> Your response
+> Your response  Bellevue
 
 5. What is the registered Tech Email for microsoft.com?
-> Your response
+> Your response msnhst@microsoft.com
 
 6. Which subdomain of becode.org starts with ``d`` and ends with ``n``?
-> Your response
+> Your response dokiman.becode.org 
 
 7. Among the BeCode team, who is a fan of Oscar Wilde ?
-> Your response
+> Your response Pierre-Yves dehon msnhst@microsoft.com
+
 
 8. Which of the BeCode partners begins with the letter ``p`` and ends with the letter ``t``?
-> Your response
+> Your response Pritrust
 
 9. Who are the founders of BeCode?
-> Your respons
+> Your respons Karen Boers, Laurent Hublet and Rodolphe Verhaegen
