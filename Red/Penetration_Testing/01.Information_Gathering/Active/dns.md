@@ -102,7 +102,7 @@ you'll need dnspython for this-> install it
 ```python
 import dns.query
 import dns.zone
-import dns.resolver
+import dns.resolvers
 
 def attempt_zone_transfer(domain):
     try:
