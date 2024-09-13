@@ -8,7 +8,6 @@
 ## The Script
 
 #!/bin/bash
-
 `# Function to monitor CPU usage`
 monitor_cpu() {
     echo "=== CPU Usage ==="
