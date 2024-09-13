@@ -1,7 +1,4 @@
 
-#
-
-#
 #                          The Library Project 
 
 ### After 7843 hours of linux 
@@ -11,7 +8,6 @@
 I can finally present this project to you. 
 
 
-#
 ## CONTENT: 
 
 Part 1:
@@ -32,19 +28,11 @@ Part 2:
 
 In every folder, you'll find a 'support' file , documented with the errors ive encountered , how i fixed them, extra tips and whatever else. 
 
-#
-#
 
 !!!!!!!! REALLY IMPORTANT SHORT VIDEO MUST WATCH !!!!!!!!
 https://www.youtube.com/watch?v=dQw4w9WgXcQ
 
 
-
-
-
-#
-#
-#
 
 ## Project Context
 
