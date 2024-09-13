@@ -9,6 +9,8 @@
 
 #!/bin/bash
 
+`# Function to monitor CPU usage`
+
 monitor_cpu() {
     echo "=== CPU Usage ==="
     top -bn1 | grep "Cpu(s)"
