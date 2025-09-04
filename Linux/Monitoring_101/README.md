@@ -1,7 +1,7 @@
 
 # The Mission
 
-## PART1
+## PART 1
 
 One of the most important responsibilities a system administrator or SOC analyst has is monitoring the systems he manages. Indeed it's one thing to set them up and install software on them, but then what!? Well the next step is ensuring that the machines you provisioned as well as the services you deployed on them remain **available**, **reliable** and **secure**!
 This challenge is divided in two tasks, the first one having you **research how to monitor** a Linux system as well as **what to look for** when doing so. You will have to **take note** of all your findings in a text file (EX: _markdown_) while being as **exhaustive** as possible (_what to monitor_, _how to monitor it_, _commands used_, _..._). Try to answer, but **don't limit yourself to**, the questions below to guide you through 
@@ -33,3 +33,4 @@ The second task is meant to serve as practice and will have you, in a different 
 There are plenty of tools out there but remember that collecting the metrics is only the first step towards an end goal, which is, to be able to keep track of the state of machines, troubleshoot them to understand errors and in the best cases prevent issues before they even happen!
 
 One last thing, we cannot understate how **important**, even **crucial**, monitoring for servers, services and applications deployment.
+
