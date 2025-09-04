@@ -1,5 +1,5 @@
 
-# MySQL Basics exercises
+# MySQL Basic exercises
 
 ## Part 1
 
